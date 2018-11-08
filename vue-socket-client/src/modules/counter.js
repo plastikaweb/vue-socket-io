@@ -4,10 +4,10 @@ const counterModule = {
   },
   mutations: {
     SOCKET_COUNTER_INCREMENT(state, counter) {
-      state.count = counter;
+      state.count = counter[0];
     },
     SOCKET_COUNTER_DECREMENT(state, counter) {
-      state.count = counter;
+      state.count = counter[0];
     }
   },
   actions: {
@@ -21,7 +21,7 @@ const counterModule = {
       state,
       rootState
     }) => {
-      rootState.io.emit('increment', state.count);
+      rootState.io.emit('decrement', state.count);
     }
   },
   getters: {
