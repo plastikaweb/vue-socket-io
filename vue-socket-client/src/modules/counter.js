@@ -23,6 +23,9 @@ const counterModule = {
     }) => {
       rootState.io.emit('increment', state.count);
     }
+  },
+  getters: {
+    count: (state) => state.count
   }
 };
 
